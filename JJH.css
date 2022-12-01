@@ -1,0 +1,250 @@
+/* css reset */
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Caveat Brush', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  color: #222;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
+  color: #2b72dd;
+}
+
+li {list-style: none;}
+
+button {
+  background: none;
+  outline: none;
+}
+
+/* common css */
+section {
+  padding: 100px 0;
+}
+
+section h2 {
+  padding-bottom: 30px;
+  text-align: center;
+  font-size: 50px;
+}
+
+/* main css */
+header {
+  position: sticky;
+  top: 0;
+  height: 80px;
+  padding: 0 20%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+header #logo {
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+header .navi .menu {
+  display: flex;
+}
+header .navi .menu--list {
+  font-size: 24px;
+  margin: 0 20px;
+}
+header .navi .menu--list a {
+  color: #472f19;
+}
+
+#mainContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 150px 0;
+}
+#mainContent .my-picture {
+  margin-right: 50px;
+}
+#mainContent .my-picture img {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+}
+#mainContent .desc-wrap {}
+#mainContent .desc-wrap h3 {
+  font-size: 60px;
+  animation: slide 1s;
+}
+#mainContent .desc-wrap p {
+  opacity: 0;
+  font-size: 30px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  animation: slide 1s;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+}
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#mainContent .desc-wrap .info {
+  position: relative;
+  font-weight: 400;
+  cursor: ;
+}
+#mainContent .desc-wrap .info::after {
+  display: block;
+  content: "ⓘ";
+  font-size: 14px;
+  color: #ff3131;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 10px;
+  height: 10px;
+}
+#mainContent .desc-wrap .info:hover::after {
+  content: "";
+  width: 300px;
+  height: 300px;
+  background-image: url(./images/hardy.JPG);
+  background-size: cover;
+  background-position: center center;
+  background-color: #000;
+  transform: rotate(360deg);
+  transition: transform .5s;
+}
+
+#aboutMe {
+  background-color: #CE9461;
+}
+#aboutMe h2 {
+  color: #fff;
+}
+#aboutMe .desc-wrap {
+  width: 600px;
+  padding: 50px;
+  margin: 0 auto;
+  background-color: #fff;
+  color: #472f19;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#aboutMe .desc-wrap h3 {
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+#aboutMe .desc-wrap p {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: right;
+}
+
+#myPlan {
+  width: 1000px;
+  margin: 0 auto;
+}
+#myPlan article {}
+#myPlan article .plan--title {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #feeed9;
+}
+#myPlan article .plan-wrap {
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+#myPlan article .plan-wrap:last-child {
+  margin-bottom: 0;
+}
+#myPlan article .plan-wrap .plan--list {
+  padding-bottom: 10px;
+  font-size: 16px;
+}
+
+#myPlan article .plan-wrap .plan--list::before {
+  display: inline-block;
+  content: "";
+  width: 5px;
+  height: 5px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background-color: #333;
+}
+#myPlan article .week-plan-wrap {
+  margin: 20px;
+  height: 500px;
+  overflow: auto;
+}
+#myPlan article .week-plan-wrap .plan-wrap {
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+#myPlan article .week-plan-wrap .plan-wrap .plan--week {
+  margin-bottom: 10px;
+}
+
+#favorites {
+  background-color: #FCFFE7;
+}
+
+#favorites h2 {
+  color: #472f19;
+}
+
+#favorites .img-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  box-sizing: border-box;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+#favorites .img-wrap .img--list {
+  position: relative;
+  width: calc(25% - 10px);
+  height: 300px;
+  overflow: hidden;
+  transition: transform .5s;
+}
+
+#favorites .img-wrap .img--list img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+#favorites .img-wrap .img--list .info {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  background-color: #472f19;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+#favorites .img-wrap .img--list:hover .info {
+  opacity: .9;
+}
